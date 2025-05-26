@@ -234,3 +234,39 @@ Processing by Api::V1::PostsController#index as */*
 Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-05-26 07:31:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/root12/.asdf/installs/ruby/3.3.2/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/root12/.asdf/installs/ruby/3.3.2/lib/ruby/gems/3.3.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/icon.png" for 127.0.0.1 at 2025-05-26 07:31:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/icon.png"):
+  
+Started GET "/api/v1/posts" for ::1 at 2025-05-26 07:40:40 -0400
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (8.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Backend',controller='posts'*/[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 6.1ms | ActiveRecord: 22.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mPost Load (9.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Backend'*/[0m
+  [1m[36mPost Create (3.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES ('Second Post', 'Hello world body', '2025-05-26 11:41:53.513225', '2025-05-26 11:41:53.513225') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='Backend'*/[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 /*application='Backend'*/[0m
+Started GET "/api/v1/posts" for 127.0.0.1 at 2025-05-26 07:42:22 -0400
+Processing by Api::V1::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Backend',controller='posts'*/[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-05-26 07:42:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
